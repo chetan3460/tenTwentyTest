@@ -82,6 +82,13 @@ $(document).ready(function () {
         get_next_slick_img();
     });
 
+    // Add an event listener for Slick's afterChange event
+    // function get_next_slick_img() {
+    //     var next_slick_img = $('.slick-current').next('.slider-image').find('img').attr('src');
+    //     $('.next-slick-img img').attr('src', next_slick_img);
+    //     $('.next-slick-img').css('background-image', 'url(' + next_slick_img + ')');
+    // }
+
     function get_next_slick_img() {
         var currentSlideIndex = $('.slick-slider').slick('slickCurrentSlide');
         var $nextSlide = $('.slick-slider').find('.slick-slide').eq(currentSlideIndex + 1);
