@@ -135,7 +135,7 @@ $(document).ready(function () {
                 start: 'top 100%',
                 end: 'bottom 60%',
                 scrub: false,
-                markers: true,
+                markers: false,
                 toggleActions: 'play none none none'
             }
         });
