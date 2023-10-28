@@ -1,0 +1,50 @@
+/* ==========================================================================
+  COMMON VARIABLES
+  ========================================================================== */
+
+// TYPOGRAPHY
+$htmlFontSize: 16px;
+$baseFontSize: 16px;
+$baseFontFamily: 'Work Sans',
+sans-serif;
+$baseLineHeight: 22px;
+
+$baseTextColor: #7A7777;
+$primaryColor: #9095a7;
+$secondaryColor: #d8bb41;
+$theme-color: #FFFCFA;
+
+
+// Color variable map
+$colors: ( // non-nested values
+  background: #ffffff,
+  border: #c5c5c5,
+  failure: rgba(199, 28, 28, 0.73),
+  success: #00ac57,
+  warning: #ea9f12,
+  white: #ffffff,
+  // nested map inception
+  primary: (red: #f25f3a,
+    blue: #242d52,
+    base: #EEF4F9,
+    black: #000000,
+    grey: #999999,
+
+  ),
+  secondary: (light-white: #EEF4F9,
+    light-black: #221F20));
+
+
+$baseColor : #EEF4F9;
+$black : #000000;
+$white : #ffffff;
+$grey : #7A7777;
+
+
+
+// Grid-breakpoints
+$grid-breakpoints: (xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px) !default;

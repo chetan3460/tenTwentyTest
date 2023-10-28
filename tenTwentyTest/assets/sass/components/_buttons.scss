@@ -1,0 +1,33 @@
+// ==========================================================================
+//  Site Button Component
+//  ==========================================================================
+
+.btn {
+    padding: 10px 16px;
+    @include font-rem(16px, 17px);
+    font-family: $baseFontFamily;
+    font-weight: 400;
+    border: 1px solid #000;
+    text-transform: initial;
+    border-radius: 0;
+    color: color(secondary, light-black);
+    background-color: $theme-color;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        color: color(secondary, light-black);
+    }
+
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    @include bp(mobile) {
+        // width: 170px;
+        // padding: 11px 20px;
+    }
+}

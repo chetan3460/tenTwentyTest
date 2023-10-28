@@ -1,0 +1,611 @@
+@import "../variables";
+
+
+
+main {
+  .banner-section {
+    position: relative;
+
+    .banner-slider {
+      .slick-slide {
+        overflow: hidden;
+      }
+
+      .slick-next {
+        position: absolute;
+        bottom: 67px;
+        left: 135px;
+        background: transparent;
+        border: 1px solid rgba(238, 244, 249, 0.3);
+        padding: 20px;
+        width: 138px;
+        height: 138px;
+
+        @include bp(mobile) {
+          left: 25px;
+          width: 115px;
+          height: 115px;
+          bottom: 60px;
+          padding: 17px;
+        }
+
+        .next-slick-img {
+          overflow: hidden;
+
+          img {
+            animation: sliderMove 15s linear infinite;
+          }
+        }
+
+        span {
+          position: absolute;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          top: 50%;
+          left: 0;
+          right: 0;
+          font-weight: 400;
+          font-size: $h5 + 1;
+          line-height: 110%;
+          color: color(secondary, light-white);
+          z-index: 9;
+
+          @include bp(mobile) {
+            @include font-rem(14px, 15px)
+          }
+        }
+
+        .thumb {
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .slick-thumb-nav {
+          width: 95px;
+          height: 95px;
+
+          @include bp(mobile) {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+
+      .progress-bar {
+        height: 148px;
+        width: 148px;
+        position: absolute;
+        z-index: 0;
+        bottom: -6px;
+        left: -5.5px;
+        background: linear-gradient(to right, color(secondary, light-white) 99.99%, transparent),
+          linear-gradient(to bottom, color(secondary, light-white) 99.99%, transparent),
+          linear-gradient(to right, color(secondary, light-white) 99.99%, transparent),
+          linear-gradient(to bottom, color(secondary, light-white) 99.99%, transparent);
+        background-size: 100% 8px, 8px 100%, 100% 8px, 8px 100%;
+        background-repeat: no-repeat;
+        animation: progress 4s linear forwards;
+        background-position: -148px 0px, 140px -148px, 148px 140px, 0px 148px;
+
+
+
+        @include bp(mobile) {
+          height: 123px;
+          width: 123px;
+          bottom: -6px;
+          left: -5.5px;
+        }
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+
+        @include bp(xs) {
+          height: 80vh;
+        }
+      }
+
+
+
+      .slider-content {
+        position: absolute;
+        bottom: 42%;
+        margin-left: 135px;
+        overflow: hidden;
+
+        @include bp(mobile) {
+          margin-left: 25px;
+          max-width: 400px;
+        }
+
+        h1 {
+          margin-top: 24px;
+
+          @include bp(mobile) {
+            margin-top: 15px;
+          }
+
+          span {
+            display: block;
+
+            @include bp(mobile) {
+              display: inline-block;
+            }
+          }
+        }
+
+      }
+    }
+
+    .slider-pagination {
+      position: absolute;
+      bottom: 127px;
+      color: color(secondary, light-white);
+      left: 306px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include bp(mobile) {
+        left: 180px;
+        bottom: 115px;
+      }
+
+
+      span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 110%;
+        color: color(secondary, light-white);
+      }
+
+      .slideNumber {
+        animation-name: fadeInUpSD;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        opacity: 1;
+      }
+
+      .line {
+        height: 1px;
+        background: color(secondary, light-white);
+        width: 103px;
+        display: block;
+        margin: 0 17px;
+
+        @include bp(mobile) {
+          width: 100px;
+
+        }
+      }
+    }
+
+
+    // .slider-progress {
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: 0;
+    //   width: 100%;
+    //   height: 5px;
+    // }
+
+    // .slider-progress span {
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: 0;
+    //   display: block;
+    //   width: 0px;
+    //   height: 100%;
+    //   background-color: rgba(233, 233, 120, 0.7);
+    //   transition: all 0s linear;
+    // }
+
+    // .slider-progress span.active {
+    //   width: 100%;
+    // }
+
+    .slider-progress {
+      position: relative;
+      width: 100%;
+      height: 10px;
+      background-color: #ccc;
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      background-color: #007bff;
+      transition: width 0.1s ease-in-out;
+    }
+
+
+  }
+}
+
+
+
+// Quality Products Css
+.product-section {
+  overflow: hidden;
+  padding: 153px 0 150px;
+
+  @include bp(mobile) {
+    padding-top: 82px;
+  }
+
+  .section-title {
+    text-align: center;
+    padding-bottom: 100px;
+
+    h3 {
+      margin-bottom: 30px;
+    }
+
+    p {
+      @include font-rem(24px);
+      max-width: 748px;
+      margin: 0 auto;
+    }
+  }
+
+
+
+  .products-swiper {
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-slide {
+      &.swiper-slide-active {
+        .product-content {
+
+          h3,
+          p {
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+
+    .cursor {
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.05s opacity ease;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      @include bp(mobile) {
+        display: none;
+      }
+
+      span {
+        color: color(primary, black);
+        @include font-rem(20px)
+      }
+    }
+  }
+
+  .product-card {
+    width: 100%;
+    max-width: 434px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include bp(mobile) {
+      max-width: 315px;
+
+    }
+
+    @include bp(sm) {
+      max-width: 290px;
+    }
+
+    @include bp(xs) {
+      max-width: 274px;
+    }
+
+    .product-img {
+      padding-top: 142%;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include object-fit(cover, center);
+      }
+    }
+
+    .product-content {
+      text-align: center;
+      padding-top: 60px;
+
+      @include bp(sm) {
+        padding-top: 48px;
+      }
+
+      h3 {
+        @include font-rem(36px, 60px);
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+
+        @include bp(mobile) {
+          @include font-rem(24px, 40px);
+          font-weight: 500;
+        }
+      }
+
+      p {
+        transition-delay: 0.3s;
+      }
+
+      h3,
+      p {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--animation-duration) all ease;
+      }
+    }
+  }
+}
+
+
+
+
+
+@-webkit-keyframes sliderMove {
+  from {
+    -webkit-transform: scale(1, 1);
+    transform-origin: 50% 50%;
+  }
+
+  to {
+    -webkit-transform: scale(1.8, 1.9);
+    transform-origin: 50% 0%;
+  }
+}
+
+@keyframes sliderMove {
+  from {
+    transform: scale(1, 1);
+    transform-origin: 50% 50%;
+  }
+
+  to {
+    transform: scale(1.8, 1.9);
+    transform-origin: 50% 0%;
+  }
+}
+
+.sliderMove {
+  -webkit-animation-name: sliderMove;
+  animation-name: sliderMove;
+}
+
+
+@-webkit-keyframes fadeInUpSD {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+@-webkit-keyframes sliderMove {
+  from {
+    -webkit-transform: scale(1, 1);
+    transform-origin: 50% 50%;
+  }
+
+  to {
+    -webkit-transform: scale(1.8, 1.9);
+    transform-origin: 50% 0%;
+  }
+}
+
+@keyframes sliderMove {
+  from {
+    transform: scale(1, 1);
+    transform-origin: 50% 50%;
+  }
+
+  to {
+    transform: scale(1.8, 1.9);
+    transform-origin: 50% 0%;
+  }
+}
+
+.sliderMove {
+  -webkit-animation-name: sliderMove;
+  animation-name: sliderMove;
+}
+
+
+@-webkit-keyframes fadeInUpSD {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpSD {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUpSD {
+  -webkit-animation-name: fadeInUpSD;
+  animation-name: fadeInUpSD;
+}
+
+@keyframes progress {
+  0% {
+    background-position: -148px 0px, 140px -148px, 148px 140px, 0px 148px;
+  }
+
+  25% {
+    background-position: 0px 0px, 140px -148px, 148px 140px, 0px 148px;
+  }
+
+  50% {
+    background-position: 0px 0px, 140px 0px, 148px 140px, 0px 148px;
+  }
+
+  75% {
+    background-position: 0px 0px, 140px 0px, 0px 140px, 0px 148px;
+  }
+
+  100% {
+    background-position: 0px 0px, 140px 0px, 0px 140px, 0px 0px;
+  }
+}
+
+
+/* MOBILE PORTRAIT to LANDSCAPE */
+@media only screen and (min-width: 250px) and (max-width: 767px) {
+
+  .cursor,
+  .cursor2 {
+    display: none;
+  }
+
+
+
+
+
+
+  .products {
+    background: none !important;
+
+    .swiper-slide {
+      img {
+        margin-top: 13px !important;
+      }
+    }
+
+  }
+
+  .products-content {
+    h4 {
+      font-weight: 500 !important;
+      font-size: 24px !important;
+      line-height: 40px !important;
+      margin: 0 0 10px 0 !important;
+    }
+
+    p {
+      font-weight: 500 !important;
+      font-size: 16px !important;
+      line-height: 22px !important;
+    }
+  }
+
+
+
+
+
+  @keyframes progress {
+    0% {
+      background-position: -123px 0px, 115px -123px, 123px 115px, 0px 123px;
+    }
+
+    25% {
+      background-position: 0px 0px, 115px -123px, 123px 115px, 0px 123px;
+    }
+
+    50% {
+      background-position: 0px 0px, 115px 0px, 123px 115px, 0px 123px;
+    }
+
+    75% {
+      background-position: 0px 0px, 115px 0px, 0px 115px, 0px 123px;
+    }
+
+    100% {
+      background-position: 0px 0px, 115px 0px, 0px 115px, 0px 0px;
+    }
+  }
+
+
+}
+
+/* MOBILE LANDSCAPE */
+@media screen and (min-width: 250px) and (max-width: 767px) and (orientation: landscape) {
+
+  .cursor,
+  .cursor2 {
+    display: none;
+  }
+
+}
+
+/* TABLETS PORTRAIT to LANDSCAPE */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  .cursor,
+  .cursor2 {
+    display: none;
+  }
+
+}
+
+/* TABLET LANDSCAPE bp(sm)ALLER DESKTOP */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+  .cursor,
+  .cursor2 {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 1199px) and (max-width: 1399px) {}
+
+/* TABLETS to MOBILE */
+@media only screen and (max-width: 991px) {
+
+  .cursor,
+  .cursor2 {
+    display: none;
+  }
+}

@@ -1,0 +1,201 @@
+/* ==========================================================================
+  Base Typography Styles
+  ========================================================================== */
+
+/* ==========================================================================
+   Base Type
+   ========================================================================== */
+* {
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    &::-moz-focus-inner {
+      border: 0;
+    }
+
+    outline: 0;
+  }
+}
+
+html {
+  @include font-rem($htmlFontSize);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  font-weight: 400;
+  color: $baseTextColor;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  letter-spacing: 0.2px;
+  margin: 0;
+  padding: 0;
+  background-color: $theme-color;
+
+  p {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @include font-rem(16px, 25px);
+    font-family: $baseFontFamily;
+
+    @include bp(mobile) {
+      @include font-rem(15px, 25px);
+      letter-spacing: 0;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Headings and paragraph
+   ========================================================================== */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-style: normal;
+  font-family: $baseFontFamily;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  @include font-rem(64px, 64px);
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  color: color(primary, base);
+  text-transform: capitalize;
+
+  @include bp(tablet-sm) {
+    @include font-rem(46px, 46px);
+    font-weight: 400;
+  }
+
+  @include bp(xs) {
+    @include font-rem(35px, 37px)
+  }
+}
+
+h2,
+.h2 {
+  @include font-rem(16px, 24px);
+  font-weight: 400;
+  color: color(primary, base);
+
+  margin: 0;
+
+  @include bp(mobile) {
+    @include font-rem(14px, 18px);
+  }
+}
+
+h3,
+.h3 {
+  @include font-rem(56px, 72px);
+  font-weight: 400;
+  color: color(primary, black);
+  letter-spacing: -1px; // 
+
+  @include bp(mobile) {
+    @include font-rem(30px, 40px);
+  }
+}
+
+
+/* Heading Typography */
+$h1 : 24px;
+$h2 : 22px;
+$h3 : 20px;
+$h4 : 18px;
+$h5 : 15px;
+$h6 : 14px;
+
+$blockquote : 25px;
+$p : 16px;
+$p-small : 12px;
+
+// Spacing 
+$p_1 : 4px;
+$p_2 : 8px;
+$p_3 : 16px;
+$p_4 : 24px;
+$p_5 : 32px;
+$p_6 : 40px;
+$p_7 : 48px;
+$p_8 : 56px;
+$p_9 : 64px;
+$p_10 : 72px;
+$p_11 : 84px;
+$p_12 : 100px;
+
+h1,
+h2,
+h3,
+p,
+a,
+span,
+li {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+a {
+  color: inherit;
+  transition: 0.3s;
+  text-decoration: inherit;
+
+  &:hover {
+    color: color(secondary, light-black);
+    text-decoration: inherit;
+  }
+}
+
+
+img {
+  max-width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden_class {
+  display: none;
+}
+
+.image-hidden {
+  visibility: hidden;
+}
+
+// section {
+//   padding: 100px 0;
+
+//   @include bp(tablet-sm) {
+//     padding: 80px 0;
+//   }
+// }
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+  }
+}
