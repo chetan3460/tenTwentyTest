@@ -32,17 +32,12 @@ main {
         .next-slick-img {
           overflow: hidden;
 
-          img {
-            animation: sliderMove 15s linear infinite;
-          }
+
         }
 
         span {
           position: absolute;
-          -webkit-transform: translateY(-50%);
-          -moz-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-          -o-transform: translateY(-50%);
+
           transform: translateY(-50%);
           top: 50%;
           left: 0;
@@ -370,34 +365,6 @@ main {
 
 
 
-@-webkit-keyframes sliderMove {
-  from {
-    -webkit-transform: scale(1, 1);
-    transform-origin: 50% 50%;
-  }
-
-  to {
-    -webkit-transform: scale(1.8, 1.9);
-    transform-origin: 50% 0%;
-  }
-}
-
-@keyframes sliderMove {
-  from {
-    transform: scale(1, 1);
-    transform-origin: 50% 50%;
-  }
-
-  to {
-    transform: scale(1.8, 1.9);
-    transform-origin: 50% 0%;
-  }
-}
-
-.sliderMove {
-  -webkit-animation-name: sliderMove;
-  animation-name: sliderMove;
-}
 
 
 @-webkit-keyframes fadeInUpSD {
@@ -415,34 +382,7 @@ main {
 }
 
 
-@-webkit-keyframes sliderMove {
-  from {
-    -webkit-transform: scale(1, 1);
-    transform-origin: 50% 50%;
-  }
 
-  to {
-    -webkit-transform: scale(1.8, 1.9);
-    transform-origin: 50% 0%;
-  }
-}
-
-@keyframes sliderMove {
-  from {
-    transform: scale(1, 1);
-    transform-origin: 50% 50%;
-  }
-
-  to {
-    transform: scale(1.8, 1.9);
-    transform-origin: 50% 0%;
-  }
-}
-
-.sliderMove {
-  -webkit-animation-name: sliderMove;
-  animation-name: sliderMove;
-}
 
 
 @-webkit-keyframes fadeInUpSD {
@@ -504,41 +444,6 @@ main {
 /* MOBILE PORTRAIT to LANDSCAPE */
 @media only screen and (min-width: 250px) and (max-width: 767px) {
 
-  .cursor,
-  .cursor2 {
-    display: none;
-  }
-
-
-
-
-
-
-  .products {
-    background: none !important;
-
-    .swiper-slide {
-      img {
-        margin-top: 13px !important;
-      }
-    }
-
-  }
-
-  .products-content {
-    h4 {
-      font-weight: 500 !important;
-      font-size: 24px !important;
-      line-height: 40px !important;
-      margin: 0 0 10px 0 !important;
-    }
-
-    p {
-      font-weight: 500 !important;
-      font-size: 16px !important;
-      line-height: 22px !important;
-    }
-  }
 
 
 
@@ -567,45 +472,4 @@ main {
   }
 
 
-}
-
-/* MOBILE LANDSCAPE */
-@media screen and (min-width: 250px) and (max-width: 767px) and (orientation: landscape) {
-
-  .cursor,
-  .cursor2 {
-    display: none;
-  }
-
-}
-
-/* TABLETS PORTRAIT to LANDSCAPE */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-
-  .cursor,
-  .cursor2 {
-    display: none;
-  }
-
-}
-
-/* TABLET LANDSCAPE bp(sm)ALLER DESKTOP */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-  .cursor,
-  .cursor2 {
-    display: none;
-  }
-
-}
-
-@media only screen and (min-width: 1199px) and (max-width: 1399px) {}
-
-/* TABLETS to MOBILE */
-@media only screen and (max-width: 991px) {
-
-  .cursor,
-  .cursor2 {
-    display: none;
-  }
 }
