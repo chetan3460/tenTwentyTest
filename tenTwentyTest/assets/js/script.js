@@ -2,7 +2,7 @@ $(document).ready(function () {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     //  Mobile Menu Nav Toggle
-    $('.menuBtn').click(function () {
+    $('.menu-btn').click(function () {
         $(this).toggleClass('active');
         if ($(this).hasClass('active')) {
             $('.navbar').addClass('active');
@@ -29,8 +29,8 @@ $(document).ready(function () {
     $slick.slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 4000,
+        autoplay: true,
+        autoplaySpeed: 5000,
         prevArrow: false,
         nextArrow: '<button type="button" class="slick-custom-buttom slick-next"><div data-slick-index="0" class="progress-bar"></div></button>',
         useTransform: false,
@@ -41,7 +41,7 @@ $(document).ready(function () {
         pauseOnHover: false,
         swipe: false
     });
-
+    // Slider Clip Path Effect
     $slick.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
         const slideImageWrapper = slick.$slides[nextSlide].querySelector('.slider-image');
         const $nextSlide = slick.$slides[nextSlide];
@@ -66,10 +66,10 @@ $(document).ready(function () {
 
     });
 
-    //--- Hero Slider - Next Thumb
+    //Next Thumb
 
     setTimeout(function () {
-        $('.slick-next').append('<span>Next</span><div class="next-slick-img slick-thumb-nav"><img src="/next.jpg" class="thumb"></div>');
+        $('.slick-next').append('<span>Next</span><div class="next-slick-img slick-thumb-nav"><img src="/img.jpg" class="thumb"></div>');
         get_next_slick_img();
     }, 500);
 
@@ -86,10 +86,9 @@ $(document).ready(function () {
         var next_slick_img = $('.slider-image').find('img').attr('src');
         $('.next-slick-img img').attr('src', next_slick_img);
         $('.next-slick-img').css('background-image', 'url(' + next_slick_img + ')');
-        console.log(next_slick_img);
     }
 
-    //--- Hero Slider - Progress Bar 
+    // Progress Bar 
 
     $bar = $('.progress-bar');
 
@@ -114,9 +113,6 @@ $(document).ready(function () {
 
     startProgressbar();
 
-    $slick.on('beforeChange', function () {
-        startProgressbar();
-    });
 
 
 

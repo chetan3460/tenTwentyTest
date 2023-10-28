@@ -319,17 +319,17 @@ header {
     header .navbar.active ul li {
       opacity: 1;
       transform: translateX(0); }
-  header .menuBtn {
+  header .menu-btn {
     display: none; }
     @media (max-width: 767px) {
-      header .menuBtn {
+      header .menu-btn {
         height: 48px;
         width: 48px;
         position: relative;
         z-index: 101;
         background: #FFFCFA;
         display: block !important; }
-        header .menuBtn > span {
+        header .menu-btn > span {
           background-color: #221F20;
           border-radius: 1px;
           height: 1px;
@@ -339,7 +339,7 @@ header {
           top: 50%;
           margin: 0 0 0 -8px;
           transition: height 100ms; }
-          header .menuBtn > span:after, header .menuBtn > span:before {
+          header .menu-btn > span:after, header .menu-btn > span:before {
             content: '';
             background-color: #221F20;
             border-radius: 1px;
@@ -349,18 +349,18 @@ header {
             left: 50%;
             margin-left: -11px;
             transition: all 200ms; }
-          header .menuBtn > span:after {
+          header .menu-btn > span:after {
             top: -7px; }
-          header .menuBtn > span:before {
+          header .menu-btn > span:before {
             bottom: -7px; }
-        header .menuBtn.active > span {
+        header .menu-btn.active > span {
           height: 0; }
-          header .menuBtn.active > span:after, header .menuBtn.active > span:before {
+          header .menu-btn.active > span:after, header .menu-btn.active > span:before {
             background-color: #221F20;
             top: 1px; }
-          header .menuBtn.active > span:after {
+          header .menu-btn.active > span:after {
             transform: rotate(45deg); }
-          header .menuBtn.active > span:before {
+          header .menu-btn.active > span:before {
             transform: rotate(-45deg); } }
   header .btn {
     background: #FFFCFA; }
