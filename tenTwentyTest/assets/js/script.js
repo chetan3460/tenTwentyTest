@@ -83,9 +83,14 @@ $(document).ready(function () {
     });
 
     function get_next_slick_img() {
-        var next_slick_img = $('.slider-image').find('img').attr('src');
-        $('.next-slick-img img').attr('src', next_slick_img);
-        $('.next-slick-img').css('background-image', 'url(' + next_slick_img + ')');
+        var currentSlideIndex = $('.slick-slider').slick('slickCurrentSlide');
+        var $nextSlide = $('.slick-slider').find('.slick-slide').eq(currentSlideIndex + 1);
+
+        if ($nextSlide.length > 0) {
+            var nextSlickImg = $nextSlide.find('.slider-image img').attr('src');
+            $('.next-slick-img img').attr('src', nextSlickImg);
+            $('.next-slick-img').css('background-image', 'url(' + nextSlickImg + ')');
+        }
     }
 
     // Progress Bar 
@@ -127,10 +132,10 @@ $(document).ready(function () {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: splitTextLine,
-                start: 'top 90%',
+                start: 'top 100%',
                 end: 'bottom 60%',
                 scrub: false,
-                markers: false,
+                markers: true,
                 toggleActions: 'play none none none'
             }
         });
